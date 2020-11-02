@@ -1,0 +1,97 @@
+<div class="first-owl">
+<?php
+for($i = 1; $i <= 3; $i++) {
+    ?>
+    <div class="item">
+        <?= $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('slick-test-img-'.$i)->toHtml() ?>
+        <div class="content">
+            <?= $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('slick-test-main-text-'.$i)->toHtml() ?>
+            <?= $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('slick-test-extra-text-'.$i)->toHtml() ?>
+            <button class="content-btn">
+                <?= $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('slick-test-button-'.$i)->toHtml() ?>
+            </button>
+        </div>
+    </div>
+<?php
+}
+?>
+</div>
+<div class="magento__dropdown-widget">
+    <span class="action toggle"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          data-mage-init='{"dropdown":{}}'>
+        <span>Dropdown Opener Button</span>
+     <ul class="dropdown-options" data-target="dropdown">
+        <li>
+             <span class="item"><a href="#">Dropdown Item One, With Link</a></span>
+         </li>
+         <li>
+             <span class="item"><a href="#">Dropdown Item Two, With Link</a></span>
+         </li>
+         <li>
+             <span class="item"><a href="#">Dropdown Item Three, With Link</a></span>
+         </li>
+     </ul>
+</div>
+<!-- <script >
+    require([
+        'jquery',
+        'owlcarousel'
+    ], function($){
+        $(document).ready(function() {
+            $('.first-owl').owlCarousel({
+                // loop:false,
+                // nav:false,
+                items:1,
+                dots:true,
+                // autoplay:true,
+                // autoplayTimeout:3000
+            })
+        });
+    });
+</script> -->
+<script>
+    require([
+        'jquery',
+        'slick'
+    ], function ($) {
+        $(document).ready(function () {
+            $(".first-owl").slick({
+                dots: true,
+                infinite: true,
+                speed: 300,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                responsive: [
+                    {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        infinite: true,
+                        dots: true
+                    }
+                    },
+                    {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 1
+                    }
+                    },
+                    {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 1
+                    }
+                    }
+                    // You can unslick at a given breakpoint now by adding:
+                    // settings: "unslick"
+                    // instead of a settings object
+                ]
+            });
+        });
+    });
+</script>

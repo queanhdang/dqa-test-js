@@ -1,0 +1,11 @@
+@import 'owl.carousel.min.css';
+@import 'owl.theme.default.css';
+@import 'slick-theme.less';
+@import 'slick.less';
+& when (@media-common = true) {
+    .magento__dropdown-widget {
+        .lib-dropdown(
+            @_toggle-selector : ~".action.toggle",
+            @_options-selector : ~"ul.dropdown-options");
+    }
+}

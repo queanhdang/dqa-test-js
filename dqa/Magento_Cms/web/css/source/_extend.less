@@ -1,0 +1,35 @@
+& when(@media-common = true) {
+    .first-owl {
+        margin-top: -25px;
+        .item {
+            position: relative;
+            img {
+                width: 100%;
+                height: auto;
+            }
+            .content {
+                position: absolute;
+                top: 70%;
+                left: 50%;
+                transform: translateY(-50%) translateX(-50%);
+                color: white;
+                text-align: center;
+                p {
+                    font-size: 18px;
+                }
+                .content-btn {
+                    display: block;
+                    background: rgba(1,1,1,0.5);
+                    border: 1px solid black;
+                    color: white;
+                    text-align: center;
+                    padding: 26px 74px 16px;
+                    &:hover {
+                        background-color: rgba(0,0,0,0.2);
+                        color: black;
+                    }
+                }
+            }
+        }
+    }
+}
